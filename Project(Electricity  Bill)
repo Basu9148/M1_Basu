@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<conio.h>
+#define Fc1 20
+#define Fc2 25
+ main()
+   {
+   int choice,kw,units;
+       float ec;
+       clrscr();
+printf("Electricity Bill for Lightning");
+begin:printf("\n enter 1 for lightning, 2 for AEH:");
+scanf("%d",&choice);
+if(choice==1)
+{
+printf("\n enter units consumed:");
+scanf("%d",&units);
+if(units>0 && units<=60)
+ec=units*1.25;
+else
+ec=60*1.25+(units-60)*2.05;
+printf("\n Bill generation fot lightning installation only");
+printf("\n Number of units consumed is %d",units);
+printf("\n Total electricity bill Rs %0.2f",Fc1+ec);
+}
+else if(choice==2)
+{
+printf("\n enter power consumed in kw:");
+scanf("%d",&kw);
+printf("\n enter units consumed:");
+scanf("%d",&units);
+if(units>0 && units<=30)
+ec=units*2.70;
+else if(units>30 && units<=100)
+ec=30*2.70+(units-30)*4;
+else if(units>100 && units<=200);
+ec=30*2.70+70*4+(units-100)*5.40;
+else
+ec=30*2.70+70*4+100*5.40+9units-200)*6.40;
+printf("\n\n Bill generation for AEH installation");
+printf("\n Number of units consumed is %d",units);
+printf("\n Total electricity bill Rs %0.2f",(kw*Fc2)+ec);
+}
+else
+{
+printf("\n wrong choice!");
+goto begin;
+}
+return 0;
+}
